@@ -25,27 +25,27 @@ public class AccountImpl implements Account{
     @Override
     public void deposit(int amount) {
         this.balance += amount;
-    }
+    } // 예금
 
     @Override
-    public void withdraw(int amount) throws InsufficientBalanceException, RestrictedWithdrawException {
+    public void withdraw(int amount) throws InsufficientBalanceException, RestrictedWithdrawException { // 출금
         this.balance -= amount;
     }
 
     @Override
-    public void transfer(int amount, Account destination) throws InsufficientBalanceException, RestrictedTransferException {
+    public void transfer(int amount, Account destination) throws InsufficientBalanceException, RestrictedTransferException { // 이체
         this.balance -= amount;
         destination.deposit(amount);
     }
 
     @Override
-    public void showInformation() {
+    public void showInformation() { // 계좌 정보
         System.out.println(accountType.get(this.accountNumber-1) + " (계좌번호: "
         + this.accountNumber + ", 잔액: " + this.balance + "원, 예금주: " + this.owner + ")");
     }
 
     @Override
-    public void showMenu() {
+    public void showMenu() { // 메뉴 표시
         System.out.print("원하시는 업무는? (+: 입금, -: 출금, T: 이체, I: 정보) ");
     }
 }
