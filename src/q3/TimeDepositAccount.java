@@ -72,11 +72,11 @@ public class TimeDepositAccount extends AccountImpl{
                     int c = sc.nextInt();
                     if(c == 0) break;
                     AccountImpl selectedAccount = accountList.get(c-1);
-                    int amount = (int) (this.balance * (1 + ir));
+                    int amount = (int) (this.balance * (1000 + (double)(Math.round(ir * 10000))/10) / 1000);
                     this.balance -= amount;
                     selectedAccount.deposit(amount);
 
-                    System.out.println(accountType.get(c-1) + " 통장에 " + selectedAccount.balance + "원이 입금되었습니다.");
+                    System.out.println(accountType.get(c-1) + "에 " + amount + "원이 입금되었습니다.");
                     System.out.println("정기예금 통장은 해지되었습니다. 감사합니다.");
                     accountList.remove(this); // 통장 해지
                     return;

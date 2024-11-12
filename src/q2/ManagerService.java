@@ -16,14 +16,14 @@ public class ManagerService {
 
     public void showAllSalaryInfo() {
         for (Worker worker : workers) {
-            worker.showSalaryInfo(worker.name);
+            worker.showSalaryInfo();
         }
     }
 
     public void showSalaryInfo(String name) {
         for (Worker worker : workers) {
             if (worker.name.equals(name)) {
-                worker.showSalaryInfo(worker.name);
+                worker.showSalaryInfo();
             }
         }
     }

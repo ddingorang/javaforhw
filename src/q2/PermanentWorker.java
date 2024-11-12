@@ -12,8 +12,8 @@ public class PermanentWorker extends Worker{
     }
 
     @Override
-    public void showSalaryInfo(String name) {
-        System.out.println("사원 " + name + "의 급여는 " + this.getPay() + "원");
+    public void showSalaryInfo() {
+        System.out.println("사원 " + this.name + "의 급여는 " + this.getPay() + "원");
     }
 
 }

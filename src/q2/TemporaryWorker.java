@@ -17,8 +17,8 @@ public class TemporaryWorker extends Worker{
     }
 
     @Override
-    public void showSalaryInfo(String name) {
-        System.out.println("사원 " + name + "의 근무시간은" + this.workTime
+    public void showSalaryInfo() {
+        System.out.println("사원 " + this.name + "의 근무시간은" + this.workTime
         + "시간, 시간 수당은 " + this.payPerHour + "원 급여는 " + this.getPay() + "원");
     }
 }

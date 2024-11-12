@@ -58,10 +58,12 @@ public class Main {
                 else if(input.equals("-")) {
                     int money = -1;
                     while(money != 0 ) {
-                        System.out.print("출금하실 금액은? ");
-                        money = sc.nextInt();
-                        sc.nextLine();
                         try {
+                            money = 0;
+                            cur.withdraw(money);
+                            System.out.print("출금하실 금액은? ");
+                            money = sc.nextInt();
+                            sc.nextLine();
                             cur.withdraw(money);
                             if(money != 0) {
                                 System.out.println(accountType.get(cur.accountNumber-1) + " 통장에서 " +
@@ -69,6 +71,7 @@ public class Main {
                             }
                         } catch (InsufficientBalanceException | RestrictedWithdrawException e) {
                             System.out.println(e.getMessage());
+                            break;
                         }
                     }
 
